@@ -2,9 +2,9 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 
-const product = require('./routes/product.route'); // Imports routes for the products
+const comic = require('./routes/comic.route'); // Imports routes for the products
 const app = express();
-app.use('/products', product);
+app.use('/comics', comic);
 
 let port = 1234;
 
