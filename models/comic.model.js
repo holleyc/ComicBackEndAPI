@@ -2,9 +2,9 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 let ComicSchema = new Schema({
-    name: {type: String, required: true, max: 100},
-    publisher: {type: String, required: true, max: 100},
-    issue: {type: Number, required: true},
+    name: {type: String, required: false, max: 100},
+    publisher: {type: String, required: false, max: 100},
+    issue: {type: Number, required: false},
 });
 
 
