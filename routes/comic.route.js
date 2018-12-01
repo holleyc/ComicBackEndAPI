@@ -16,3 +16,9 @@ router.post('/create', comic_controller.comic_create);
 
 // This is the read comic get
 router.get('/:id', comic_controller.comic_details);
+
+// This is the update comic put
+router.put('/:id/update', comic_controller.comic_update);
+
+// This is delete comic
+router.delete('/:id/delete', comic_controller.comic_delete);

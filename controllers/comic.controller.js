@@ -31,3 +31,19 @@ exports.comic_details = function (req, res) {
         res.send(comic);
     })
 };
+
+// This will update the comic
+exports.comic_update = function (req, res) {
+    Comic.findByIdAndUpdate(req.params.id, {$set: req.body}, function (err, comic) {
+        if (err) return next(err);
+        res.send('Comic udpated.');
+    });
+};
+
+// This will delete a comic
+exports.comic_delete = function (req, res) {
+    Comic.findByIdAndRemove(req.params.id, function (err) {
+        if (err) return next(err);
+        res.send('Comic deleted successfully!');
+    })
+};
