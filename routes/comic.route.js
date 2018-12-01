@@ -11,4 +11,8 @@ module.exports = router;
 
 // routes/comics.route.js
 
+// This is the create comic post
 router.post('/create', comic_controller.comic_create);
+
+// This is the read comic get
+router.get('/:id', comic_controller.comic_details);

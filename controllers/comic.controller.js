@@ -6,6 +6,7 @@ exports.test = function (req, res) {
 };
 
 // controllers/comics.js
+// This will create a new item
 exports.comic_create = function (req, res) {
     let comic = new Comic(
         {
@@ -20,5 +21,13 @@ exports.comic_create = function (req, res) {
             return next(err);
         }
         res.send('Comic Created successfully')
+    })
+};
+
+// This will find the item by id
+exports.comic_details = function (req, res) {
+    Comic.findById(req.params.id, function (err, comic) {
+        if (err) return next(err);
+        res.send(comic);
     })
 };
