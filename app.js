@@ -6,6 +6,19 @@ var comic = require('./routes/comic.route'); // Imports routes for the products
 var app = express();
 //app.use('/comics', comic);
 
+var template = require('jade').compileFile(__dirname + '/source/templates/homepage.jade');
+
+//app.use(logger('dev'))
+app.use(express.static(__dirname + '/static'))
+
+app.get('/', function (req, res, next) {
+  try {
+    var html = template({ title: 'Home' })
+    res.send(html)
+  } catch (e) {
+    next(e)
+  }
+});
 
 // Set up mongoose connection
 // Import the mongoose module
