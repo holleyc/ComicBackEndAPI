@@ -7,6 +7,5 @@ let ComicSchema = new Schema({
     issue: {type: Number, required: false},
 });
 
-
 // Export the model
 module.exports = mongoose.model('Comic', ComicSchema);

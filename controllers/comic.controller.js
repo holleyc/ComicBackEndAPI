@@ -10,9 +10,9 @@ exports.test = function (req, res) {
 exports.comic_create = function (req, res) {
     let comic = new Comic(
         {
-            name: req.body.name,
-	    publisher: req.body.publisher,
-            issue: req.body.issue
+            name:  req.name,
+            publisher: "Marvel",
+            issue: "4434"
         }
     );
 
@@ -20,6 +20,7 @@ exports.comic_create = function (req, res) {
         if (err) {
             return next(err);
         }
+        console.log(req.name);
         res.send('Comic Created successfully')
     })
 };
