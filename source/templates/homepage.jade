@@ -1,5 +1,5 @@
 - var comics = !{comics};
-- console.log("comics");
+- console.log("Loading Jade Homepage");
 
 doctype html
 html( lang="en", ng-app )
@@ -18,10 +18,11 @@ html( lang="en", ng-app )
         .panel.panel-default
             .panel-heading The Comic Collection App
             for comic in comics 
+                - console.log(comic.name);
                 span comic.name
             form(action='/comics/create',method='POST')
                 h5(style="padding:10px;") Add comic here
-                - console.log("Test");
+
                 label(for='name') Comic Name:
                 input(type='text', name='name', id='name')
 
@@ -34,9 +35,9 @@ html( lang="en", ng-app )
                 input(type='submit')
             div
                 h1 List of Comics
-                for name in comics
+                for comic in comics
                     div.card
-                        h2= name
+                        h2= comic.name
 
         script( src='//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js' )
         script( src='//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js' )
