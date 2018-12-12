@@ -1,7 +1,6 @@
 //app.js
 var express = require('express');
 var bodyParser = require('body-parser');
-const path = require('path');
 
 var comic = require('./routes/comic.route'); // Imports routes for the products
 var app = express();

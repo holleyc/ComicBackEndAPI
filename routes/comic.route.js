@@ -16,6 +16,9 @@ router.post('/create', comic_controller.comic_create);
 // This is the read comic get
 router.get('/:id', comic_controller.comic_details);
 
+// This is the get all comics
+router.get('/getallcomics', comic_controller.comic_list);
+
 // This is the update comic put
 router.put('/:id/update', comic_controller.comic_update);
 
@@ -23,12 +26,12 @@ router.put('/:id/update', comic_controller.comic_update);
 router.delete('/:id/delete', comic_controller.comic_delete);
 
 /* GET Userlist page. */
-router.get('/userlist', function(req, res) {
+router.get('/comiclist', function(req, res) {
     var db = req.db;
     var collection = db.get('comics');
     collection.find({},{},function(e,docs){
-        res.render('userlist', {
-            "userlist" : docs
+        res.render('comics', {
+            "comics" : docs
         });
     });
 });

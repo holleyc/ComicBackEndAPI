@@ -25,6 +25,14 @@ exports.comic_create = function (req, res) {
     })
 };
 
+// This will find all the comics
+exports.comic_list = function (req, res) {
+    Comic.find(req.params.id, function (err, comic) {
+        if (err) return next(err);
+        res.send(comic);
+    })
+};
+
 // This will find the item by id
 exports.comic_details = function (req, res) {
     Comic.findById(req.params.id, function (err, comic) {
