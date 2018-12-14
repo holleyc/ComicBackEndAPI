@@ -25,16 +25,9 @@ router.put('/:id/update', comic_controller.comic_update);
 // This is delete comic
 router.delete('/:id/delete', comic_controller.comic_delete);
 
-/* GET Userlist page. */
-router.get('/comiclist', function(req, res) {
-    var db = req.db;
-    var collection = db.get('comics');
-    collection.find({},{},function(e,docs){
-        res.render('comics', {
-            "comics" : docs
-        });
-    });
-});
+
+
+
 
 /*
  * DELETE to deleteuser.

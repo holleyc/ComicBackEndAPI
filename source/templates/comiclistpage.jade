@@ -1,0 +1,21 @@
+- var comics = !{comics};
+- console.log("Loading Comic List");
+
+var results_from_mongo = [];
+
+doctype html
+html( lang="en", ng-app )
+
+    div
+        h2 Comic book list
+        h1(data='List of Comics')
+        for comic in comics
+            div.card
+                h2= comic.name
+
+block content
+h1= title
+h2= "results from mongo:"
+select
+  each mongo_result, i in results
+    div Result #{i} #{mongo_result}
