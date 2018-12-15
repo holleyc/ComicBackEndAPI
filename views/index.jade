@@ -1,3 +1,8 @@
+
+- var comicss = ["Xmen","GIjoe","Flash","The Silver Surfer"]
+- console.log(results);
+- console.log(comicss);
+
 doctype html
 html
 head
@@ -5,21 +10,7 @@ body
 block content
 h1= title
 h2= "results from mongo:"
-
-        for comic in results
-            div.card
-                h2= comic.name
-
-table
-    thead
-      tr
-        th Name
-        th Publisher
-        th Issue
-
-    tbody
-      each mongo_result, i in results
-        tr
-          td= mongo_result
-          td= mongo_result.publisher
-          td= mongo_result.issue
+ul
+    for comic in comicss
+        div.card
+            h2= comic

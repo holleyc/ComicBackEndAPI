@@ -67,7 +67,7 @@ app.get('/comicss', function (req, res) {
   str.each(function (err, doc) {
 
     //assert.equal(err, null);
-    if (doc != null) {
+    if (doc != null && doc.name !== undefined ) {
         console.log(doc);
         results_from_mongo.push(doc); //Push result onto results_array
     }
@@ -79,6 +79,7 @@ app.get('/comicss', function (req, res) {
   // } catch (e) {
   //   next(e)
   // }
+  
 
   res.render('index', {"results": results_from_mongo });
 
